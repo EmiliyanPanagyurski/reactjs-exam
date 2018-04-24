@@ -23,6 +23,11 @@ class Song extends Component {
   addSong(e) {
     e.preventDefault();
 
+    if (!this.state.playlistName) {
+      alert('create a playlist or select one!');
+      return
+    }
+    
     this.props.addSong(this.state.playlistName, this.props.song);
   }
 
